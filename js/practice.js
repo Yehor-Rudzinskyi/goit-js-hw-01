@@ -180,11 +180,22 @@
 
 // console.log(biggestNum);
 
-const bro = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-let message = '';
-for (const br of bro) {
-  message += br + ',';
+// const bro = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let message = '';
+// for (const br of bro) {
+//   message += br + ',';
+// }
+
+// message = message.slice(0, message.length - 1);
+// console.log(message);
+
+const Bro = ['er', 'ere', 'rerrr'];
+for (const broo of Bro) {
+  console.log(broo);
 }
 
-message = message.slice(0, message.length - 1);
-console.log(message);
+const string = '4546843134345';
+
+for (const character of string) {
+  console.log(character);
+}
