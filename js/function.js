@@ -89,7 +89,7 @@
 
 // Пишем функцию, которая примет все логины и один логины
 
-const logins = ['one', 'two', 'three', 'four'];
+// const logins = ['one', 'two', 'three', 'four'];
 // const findLogins = function (allLogins, loginToFind) {
 //   // Объявляем функцию в параметры которой вводим значения "все логины" и "логин, кторыый необходимо найти"
 //   // вызывая функцию, в аргумент передаём массив "logins"(содержащий перечень) и логин, который необходимо проверить.
@@ -108,14 +108,21 @@ const logins = ['one', 'two', 'three', 'four'];
 // console.log(findLogins(logins, 'two'));
 // // т.е вот сюда)
 
-const findLogins = function (allLogins, loginToFind) {
-  for (login of allLogins) {
-    if (login === loginToFind) {
-      return `User ${loginToFind} is found`;
-      // упрощаем работу в фенкции убирая не нужную переменную, выводя результат сразу с return
-    }
-  }
-  return `User ${loginToFind} isn't found`;
-};
+// const findLogins = function (allLogins, loginToFind) {
+//   for (login of allLogins) {
+//     if (login === loginToFind) {
+//       return `User ${loginToFind} is found`;
+//       // упрощаем работу в фенкции убирая не нужную переменную, выводя результат сразу с return
+//     }
+//   }
+//   return `User ${loginToFind} isn't found`;
+// };
 
-console.log(findLogins(logins, 'two'));
+// console.log(findLogins(logins, 'two'));
+
+// // Упрощаем тернарник
+// const findLogins = function (allLogins, loginToFind) {
+//   return allLogins.includes(loginToFind)
+//     ? `User ${loginToFind} is found`
+//     : `User ${loginToFind} isn't found`;
+// };
