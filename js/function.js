@@ -126,3 +126,11 @@
 //     ? `User ${loginToFind} is found`
 //     : `User ${loginToFind} isn't found`;
 // };
+
+/*
+ * Для чисел меньше чем порог срабатывает continue, выполнение тела прекращается
+ * и управление передаётся на следующую итерацию.
+ */
+const numbers = [1, 3, 14, 18, 4, 7, 29, 6, 34];
+message = numbers.sort();
+console.log(message);
