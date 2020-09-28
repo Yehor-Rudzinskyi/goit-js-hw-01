@@ -168,19 +168,67 @@
 
 // console.log(filterArray([{}, () => {}, 2]));
 
-function reduceArray(array) {
-  'use strict';
-  let total = 0;
-  if (array[0]) {
-    return 0;
-  }
-  return total;
+// function reduceArray(array) {
+//   let total = 0;
+
+//   if (array === 0) {
+//     return 0;
+//   } else {
+//     for (const arr of array) {
+//       total += Number(arr);
+//     }
+//     return total;
+//   }
+// }
+// console.log(reduceArray([]));
+// console.log(reduceArray([1, 2, 3]));
+
+// console.log(reduceArray([-2, 0, 2]));
+
+// console.log(reduceArray([1, 2, 2.5]));
+
+// const sum = function () {
+//   let total = 0;
+
+//   for (const argument of arguments) {
+//     total += argument;
+//   }
+
+//   return total;
+// };
+
+// console.log(sum(1, 2, 3)); //  6
+// console.log(sum(1, 2, 3, 4)); //  10
+// console.log(sum(1, 2, 3, 4, 5)); //  15
+
+function isLoginValid(login, min = 4, max = 16) {
+  // Write code under this line
 }
 
-console.log(reduceArray([1, 2, 3]));
-6;
+function isLoginUnique(allLogins, login) {
+  'use strict';
+  // Write code under this line
+}
 
-console.log(reduceArray([-2, 0, 2]));
-0;
+function addLogin(allLogins, login) {
+  'use strict';
+  const SUCCESS = 'Логин успешно добавлен!';
+  const REFUSAL = 'Такой логин уже используется!';
+  const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
+  let message;
+  // Write code under this line
+}
 
-console.log(reduceArray([1, 2, 2.5]));
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+
+// console.log(addLogin(logins, 'Ajax'));
+// 'Логин успешно добавлен!'
+
+// console.log(addLogin(logins, 'robotGoogles'));
+// 'Такой логин уже используется!'
+
+// console.log(addLogin(logins, 'Zod'));
+// 'Ошибка! Логин должен быть от 4 до 16 символов'
+
+// console.log(addLogin(logins, 'jqueryisextremelyfast'));
+// 'Ошибка! Логин должен быть от 4 до 16 символов'
