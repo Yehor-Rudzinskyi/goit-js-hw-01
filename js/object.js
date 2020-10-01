@@ -24,6 +24,17 @@
 // hotel.guests = []; // Если не было такого свойства - то добавится
 // console.log(hotel);
 
+// const hotel = {
+//   name: 'Resort Hotel',
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// hotel.address = '1, Beach ave.';
+// hotel['manager'] = 'Chuck Norris';
+
+// console.log(hotel); // name: "Resort Hotel", stars: 5, capacity: 100, address: "1, Beach ave.", manager: "Chuck Norris"
+
 // Массивы и функции это подвид объекта!
 // Просто в массиве ключи от нуля до бесконечности - по дефолту, а в объекте ты сам их клепаешь.
 
@@ -54,11 +65,11 @@
 // Перебор Объектов
 // for ... in
 
-const feedback = {
-  goood: 5,
-  bed: 10,
-  normal: 7,
-};
+// const feedback = {
+//   goood: 5,
+//   bed: 10,
+//   normal: 7,
+// };
 
 // console.log('bed' in feedback); // Єтот метод проверки вернёт нам true\false отвечая на вопрос
 // // ест и данный ключ в объекте
@@ -87,19 +98,75 @@ const feedback = {
 // console.log(total);
 
 // Свойство Которое позволяет СОБРАТЬ\вывести сразу все значения объекта в один массив
-const values = Object.values(feedback);
-console.log(values);
-// теперь мы можем посчитать сумму этих значений
-let total = 0;
-for (const value of values) {
-  console.log(value);
-  total += value;
-}
-console.log(total);
+// const values = Object.values(feedback);
+// console.log(values);
+// // теперь мы можем посчитать сумму этих значений
+// let total = 0;
+// for (const value of values) {
+//   console.log(value);
+//   total += value;
+// }
+// console.log(total);
 
 // В ОБЩЕМ
-Object.keys(); метод ДЛЯ просмотра ключей  НАПРИМЕР можем глянуть пустой объект или нет
-- посмотреть на его массив ключей с помощью Object.keys() и length (если равен 0 - он пустой)
-Object.values() метод ДЛЯ просмотра ЗНАЧЕНИЙ ключей
-Object.entries() метод объекта, который позволяет создать из него массив массивов в котором первый элемент - имя ключа
-а второй - его значение
+// Object.keys(); метод ДЛЯ просмотра ключей  НАПРИМЕР можем глянуть пустой объект или нет
+// - посмотреть на его массив ключей с помощью Object.keys() и length (если равен 0 - он пустой)
+// Object.values() метод ДЛЯ просмотра ЗНАЧЕНИЙ ключей
+// Object.entries() метод объекта, который позволяет создать из него массив массивов в котором первый элемент - имя ключа
+// а второй - его значение
+
+// const goods = {
+//   apples: 6,
+//   grapes: 3,
+//   bread: 4,
+//   cheese: 7,
+// };
+
+// const valueTotal = Object.values(goods);
+// console.log(valueTotal);
+// let total = 0;
+// for (const value of valueTotal) {
+//   total += value;
+// }
+
+// console.log('Total:', total);
+
+// const hotel = {
+//   name: 'Resort Hotel',
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// const entries = Object.entries(hotel);
+
+// for (const entry of entries) {
+//   let prop = entry[0];
+//   let value = entry[1];
+//   console.log(`${prop}: ${value}`);
+// }
+let total = 0;
+const proba = (...rest) => {
+  for (const res of rest) {
+    total += res;
+  }
+  return total;
+};
+console.log(proba(1, 2, 3, 56, 87));
+
+const filter = function (array, ...numbers) {
+  let newArray = 0;
+  let first = 0;
+  let second = 0;
+  for (const num of numbers) {
+    console.log(num);
+  }
+  for (const arr of array) {
+    second += arr;
+  }
+  if (first === second) {
+    newArray = newArray.push();
+  }
+  return newArray;
+};
+
+console.log(filter([1, 5, 78, 9], 3, 54, 5, 9, 22));
