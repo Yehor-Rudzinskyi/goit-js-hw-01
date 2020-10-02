@@ -216,12 +216,12 @@ function addLogin(allLogins, login) {
   const REFUSAL = 'Такой логин уже используется!';
   const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
   let message;
-  if (isLoginValid(login) === false) {
+  if (!isLoginValid(login)) {
     return (message = ERROR);
-  } else if (isLoginUnique(allLogins, login) === true) {
+  } else if (isLoginUnique(allLogins, login)) {
     allLogins.push(login);
     return (message = SUCCESS);
-  } else if (isLoginUnique(allLogins, login) === false) {
+  } else if (!isLoginUnique(allLogins, login)) {
     return (message = REFUSAL);
   }
 }

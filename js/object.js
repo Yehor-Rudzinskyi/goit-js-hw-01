@@ -144,29 +144,3 @@
 //   let value = entry[1];
 //   console.log(`${prop}: ${value}`);
 // }
-let total = 0;
-const proba = (...rest) => {
-  for (const res of rest) {
-    total += res;
-  }
-  return total;
-};
-console.log(proba(1, 2, 3, 56, 87));
-
-const filter = function (array, ...numbers) {
-  let newArray = 0;
-  let first = 0;
-  let second = 0;
-  for (const num of numbers) {
-    console.log(num);
-  }
-  for (const arr of array) {
-    second += arr;
-  }
-  if (first === second) {
-    newArray = newArray.push();
-  }
-  return newArray;
-};
-
-console.log(filter([1, 5, 78, 9], 3, 54, 5, 9, 22));
