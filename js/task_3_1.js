@@ -32,32 +32,32 @@
 
 //  TASK 3
 
-const findBestEmployee = function (employees) {
-  const values = Object.values(employees);
-  let max = Math.max(...values);
-  let message = '';
-  const names = Object.keys(employees);
+// const findBestEmployee = function (employees) {
+//   const values = Object.values(employees);
+//   let max = Math.max(...values);
+//   let message = '';
+//   const names = Object.keys(employees);
 
-  for (const name of names) {
-    if (employees[name] === max) {
-      return (message = name);
-    }
-  }
-  // for (const key of employees) {
-  //   if (employees[key] === max) {
-  //     return (message = key);
-  //   }
-  // }
-  return message;
-};
+//   for (const name of names) {
+//     if (employees[name] === max) {
+//       return (message = name) || '';
+//     }
+//   }
+// for (const key of employees) {
+//   if (employees[key] === max) {
+//     return (message = key);
+//   }
+// }
+// return message;
+// };
 
-const developers = {
-  ann: 29,
-  david: 35,
-  helen: 1,
-  lorence: 99,
-};
-console.log(findBestEmployee(developers));
+// const developers = {
+//   ann: 29,
+//   david: 35,
+//   helen: 1,
+//   lorence: 99,
+// };
+// console.log(findBestEmployee(developers));
 
 //  TASK 4
 
@@ -127,16 +127,16 @@ console.log(findBestEmployee(developers));
 // Задача, веернуть объщую стоимость сплюсовав свойство price и умеожив на quantity
 // 1. Перебираем массив объектов
 // 2. Сравниваем имя свойства прилитевшее из аргумента с свойствами в массиве
-// 3. Если true - делаем вычисления и запихиваем в ранее созданную переменную
-function calculateTotalPrice(array, prop) {
-  let total = 0;
-  for (const arr of array) {
-    if (arr.name === prop) {
-      total += arr.price * arr.quantity;
-    }
-  }
-  return total;
-}
+// 3. Если true - делаем вычисления, умножая цену на кол-во, и запихиваем/плюсуем в ранее созданную переменную
+// function calculateTotalPrice(array, prop) {
+//   let total = 0;
+//   for (const arr of array) {
+//     if (arr.name === prop) {
+//       total += arr.price * arr.quantity;
+//     }
+//   }
+//   return total;
+// }
 
 // const products = [
 //   { name: 'Радар', price: 1300, quantity: 4 },
@@ -158,3 +158,21 @@ function calculateTotalPrice(array, prop) {
 
 //console.log(calculateTotalPrice(products, 'Дроид'));
 // 2800
+
+// let name = 'Brienna';
+
+// // BEGIN
+// name.split('').reverse().join('');
+
+// // END
+
+// console.log(name.split('').reverse().join(''));
+
+let eurosCount = 100;
+
+// BEGIN
+// let dollarCount = eurosCount * 1.25;
+// let rubCount = dollarCount * 60;
+console.log(
+  `${(dollarCount = eurosCount * 1.25)}\n${(rubCount = dollarCount * 60)}`,
+);
