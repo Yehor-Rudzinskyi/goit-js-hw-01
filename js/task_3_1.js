@@ -168,11 +168,28 @@
 
 // console.log(name.split('').reverse().join(''));
 
-let eurosCount = 100;
+// let eurosCount = 100;
 
 // BEGIN
 // let dollarCount = eurosCount * 1.25;
 // let rubCount = dollarCount * 60;
-console.log(
-  `${(dollarCount = eurosCount * 1.25)}\n${(rubCount = dollarCount * 60)}`,
-);
+// console.log(
+//   `${(dollarCount = eurosCount * 1.25)}\n${(rubCount = dollarCount * 60)}`,
+// );
+const transactions = [
+  { id: 635, quantity: 500, type: 'deposit' },
+  { id: 1862, quantity: 700, type: 'deposit' },
+  { id: 9991, quantity: 200, type: 'withdraw' },
+];
+for (i = 0; i < transactions.length; i += 1) {
+  numberId = `${i + 1}`;
+  console.log(numberId);
+}
+
+// for (const obj of transactions) {
+//   console.log(obj);
+//   console.log(obj.id === 635);
+// }
+
+// const numberId = Object.values();
+// console.log(numberId);
