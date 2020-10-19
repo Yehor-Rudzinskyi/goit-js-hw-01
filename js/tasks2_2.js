@@ -203,38 +203,109 @@
 // console.log(sum(1, 2, 3, 4)); //  10
 // console.log(sum(1, 2, 3, 4, 5)); //  15
 
-function isLoginValid(login, min = 4, max = 16) {
-  return login.length >= min && login.length <= max;
-}
+// function isLoginValid(login, min = 4, max = 16) {
+//   return login.length >= min && login.length <= max;
+// }
 
-function isLoginUnique(allLogins, login) {
-  return !allLogins.includes(login);
-}
+// function isLoginUnique(allLogins, login) {
+//   return !allLogins.includes(login);
+// }
 
-function addLogin(allLogins, login) {
-  const SUCCESS = 'Логин успешно добавлен!';
-  const REFUSAL = 'Такой логин уже используется!';
-  const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
-  let message;
-  if (!isLoginValid(login)) {
-    return (message = ERROR);
-  } else if (isLoginUnique(allLogins, login)) {
-    allLogins.push(login);
-    return (message = SUCCESS);
-  } else if (!isLoginUnique(allLogins, login)) {
-    return (message = REFUSAL);
-  }
-}
+// function addLogin(allLogins, login) {
+//   const SUCCESS = 'Логин успешно добавлен!';
+//   const REFUSAL = 'Такой логин уже используется!';
+//   const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
+//   let message;
+//   if (!isLoginValid(login)) {
+//     return (message = ERROR);
+//   } else if (isLoginUnique(allLogins, login)) {
+//     allLogins.push(login);
+//     return (message = SUCCESS);
+//   } else if (!isLoginUnique(allLogins, login)) {
+//     return (message = REFUSAL);
+//   }
+// }
 
-const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+// const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-console.log(addLogin(logins, 'Ajax'));
+// console.log(addLogin(logins, 'Ajax'));
 // 'Логин успешно добавлен!'
 
-console.log(addLogin(logins, 'robotGoogles'));
+// console.log(addLogin(logins, 'robotGoogles'));
 // 'Такой логин уже используется!'
-console.log(addLogin(logins, 'Zod'));
+// console.log(addLogin(logins, 'Zod'));
 // 'Ошибка! Логин должен быть от 4 до 16 символов'
 
-console.log(addLogin(logins, 'jqueryisextremelyfast'));
+// console.log(addLogin(logins, 'jqueryisextremelyfast'));
 // 'Ошибка! Логин должен быть от 4 до 16 символов'
+
+
+
+// const result = [1, 2, 3, 4, 5];
+// const value = result.splice(1, 2)
+// console.log(value)
+// console.log(result)
+// result.splice(1,2,...value)
+
+
+// const printMessage = function(message) {
+//   console.log(message);
+// };
+
+// const higherOrderFunction = function(callback) {
+//   const string = 'HOCs are awesome';
+//   callback(string);
+// };
+
+// higherOrderFunction(printMessage);
+
+// const repeatLog = function(n) {
+//   for (let i = 0; i <= n; i += 1) {
+//     console.log(i);
+//   }
+// };
+
+// repeatLog(7);
+
+// const printValue = function(value) {
+//   console.log(value);
+// };
+
+// const prettyPrint = function(value) {
+//   console.log('Logging value: ', value);
+// };
+
+// const repeat = function(n, action) {
+//   for (let i = 0; i < n; i += 1) {
+//     action(i);
+//   }
+// };
+
+// repeat(3,prettyPrint)
+
+const createCounter = function() {
+  /*
+   * Локальная переменная privateValue доступна только в замыкании.
+   * Получить к ней доступ во внешнем коде невозможно.
+   */
+  let privateValue = 0;
+
+  const increment = function() {
+    privateValue += 1;
+    console.log(privateValue);
+  };
+
+  return {
+    increment,
+  };
+};
+
+const counterA = createCounter();
+console.dir(counterA.increment); // 1
+counterA.increment(); // 2
+
+const counterB = createCounter();
+counterB.increment(); // 1
+counterB.increment(); // 2
+counterB.increment(); // 3
+

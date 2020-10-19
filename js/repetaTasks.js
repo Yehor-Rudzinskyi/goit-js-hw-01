@@ -1,3 +1,7 @@
+// const add = 'Want to be better every day!';
+// console.log(add.slice(0, length - 1).split(' ').reverse().join(' '));
+// Вернуть строку со словами идущими наоборот, без !
+
 // Задание 6
 // Напиши скрипт со следующим функционалом:
 

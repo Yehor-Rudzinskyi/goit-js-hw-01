@@ -176,6 +176,7 @@
 // console.log(
 //   `${(dollarCount = eurosCount * 1.25)}\n${(rubCount = dollarCount * 60)}`,
 // );
+
 const transactions = [
   { id: 635, quantity: 500, type: 'deposit' },
   { id: 1862, quantity: 700, type: 'deposit' },
