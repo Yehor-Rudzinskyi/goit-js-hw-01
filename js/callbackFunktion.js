@@ -121,23 +121,61 @@
 
 // console.log(labels); // ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
 
-const addIndex = (element, index) => element + index;
-// Write code under this line
-const subIndex = (element, index) => element - index;
+// const addIndex = (element, index) => element + index;
+// // Write code under this line
+// const subIndex = (element, index) => element - index;
   
-function mapArray(array, cb) {
-  'use strict';
-// Write code under this line
-  const numbers = new Array(array.length);
-  console.log(numbers)
+// function mapArray(array, cb) {
+//   'use strict';
+// // Write code under this line
+//   const numbers = new Array(array.length);
+//   console.log(numbers)
+//   for(let i = 0; i < array.length; i += 1) {
+//     const element = array[i];
+//     const index = i;
+//      numbers[i] = cb(element, index);
+//   }
+//   return numbers;
+// }
+
+// const arr  = [1,2,3,4,5];
+
+// console.log(mapArray(arr, addIndex));
+
+
+
+
+// const add = function(...args) {
+//   console.log(args); // массив всех аргументов
+// };
+
+// add(1, 2, 3);
+// add(1, 2, 3, 4, 5);
+
+const isUniq = (element, index, arr) => arr.indexOf(element) === index;
+const isEven = (element) => element % 2 === 0;
+
+function filterArray(array, cb) {
+  const numbers = [];
   for(let i = 0; i < array.length; i += 1) {
     const element = array[i];
     const index = i;
-     numbers[i] = cb(element, index);
+  const pass = cb(element, index, arr)
+    console.log(pass)
+    // Write code under this line
+    if (pass){
+      numbers.push(element)
+      
+    }
   }
   return numbers;
 }
 
-const arr  = [1,2,3,4,5];
+const arr  = [1,2,3,4,5,1,2,5];
 
-console.log(mapArray(arr, addIndex));
+console.log(filterArray(arr, isUniq));
+// [1, 2, 3, 4, 5]
+
+console.log(filterArray(arr, isEven));
+// [2, 4, 2]
+

@@ -180,3 +180,27 @@ console.log(oldClients);
 
 console.log(newClients);
 // ["Monkong", "Singu"]
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+let total = 0;
+
+for (const element of matrix) {
+  console.log('Подмассив матрицы element: ', element);
+
+  for (let i = 0; i < element.length; i += 1) {
+    console.log('Элемент подмассива матрицы element[i]: ', element[i]);
+    total += element[i];
+  }
+}
+
+console.log(total); // 45
+
+
+const newarr = [1, 2, 3, 4, 5];
+const exm = newarr.splice(2, 2, 'Bro')
+console.log(newarr)
+console.log(exm)
