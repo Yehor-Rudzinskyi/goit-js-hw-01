@@ -121,6 +121,8 @@
 
 // console.log(labels); // ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
 
+
+
 // const addIndex = (element, index) => element + index;
 // // Write code under this line
 // const subIndex = (element, index) => element - index;
