@@ -21,6 +21,8 @@
 
 // console.log(mapArray(arr, addIndex));
 
+
+
 // TASK 2
 
 // const isUniq = (element, index, arr) => arr.indexOf(element) === index;
@@ -140,36 +142,37 @@ account.addOrder(5000, 'order-4');
 // inventory.add
 // inventory.remove выступал объект inventory
 
-// const inventory = {
-//   items: ['Knife', 'Gas mask'],
-//   add(itemName) {
-//     this.items.push(itemName);
-//     return `Adding ${itemName} to inventory`;
-//   },
-//   remove(itemName) {
-//     this.items = this.items.filter(item => item !== itemName);
-//     return `Removing ${itemName} from inventory`;
-//   },
-// };
+const inventory = {
+  items: ['Knife', 'Gas mask'],
+  add(itemName) {
+    this.items.push(itemName);
+    return `Adding ${itemName} to inventory`;
+  },
+  remove(itemName) {
+    this.items = this.items.filter(item => item !== itemName);
+    return `Removing ${itemName} from inventory`;
+  },
+};
 
-// const invokeInventoryAction = function(itemName, action) {
-//   const act =  action(itemName);
-//   const msg =  `Invoking action on ${itemName}`;
-//   return {act, msg};
-// };
+const invokeInventoryAction = function(itemName, action) {
+  const act =  action(itemName);
+  const msg =  `Invoking action on ${itemName}`;
+  return {act, msg};
+};
 
-// const invokeAdd = invokeInventoryAction(
-//   'Medkit',
-//   inventory.add.bind(inventory)  // Write code in this line
-// );
-// const arrayAdd = [...inventory.items];
-// /* 
-// //console.log(invokeAdd);
-// //{ act: 'Adding Medkit to inventory', msg: 'Invoking action on Medkit' }
+const invokeAdd = invokeInventoryAction(
+  'Medkit',
+  inventory.add.bind(inventory)  // Write code in this line
+);
 
-// //console.log(arrayAdd);
-// // ['Knife', 'Gas mask', 'Medkit']
-// */
+const arrayAdd = [...inventory.items];
+ 
+console.log(invokeAdd);
+// { act: 'Adding Medkit to inventory', msg: 'Invoking action on Medkit' }
+
+console.log(arrayAdd);
+['Knife', 'Gas mask', 'Medkit']
+
 
 // const invokeRemove = invokeInventoryAction(
 //   'Gas mask',
@@ -178,13 +181,13 @@ account.addOrder(5000, 'order-4');
 
 // const arrayRemove = [...inventory.items];
 
-/* 
+
 //console.log(invokeRemove);
 //{ act: 'Removing Gas mask from inventory', msg: 'Invoking action on Gas mask' }
 
 //console.log(arrayRemove);
 // ['Knife', 'Medkit']
-*/
+
 
 // ЛЕНА TASK 7
 
@@ -399,26 +402,42 @@ account.addOrder(5000, 'order-4');
     
 // console.log(purse);
 
-const createCounter = function() {
-  let privateValue = 0;
+// ЗАМЫКАНИЕ
 
-  const increment = function() {
-    privateValue += 1;
-    console.log(privateValue);
-  };
+// const createCounter = function() {
+//   let privateValue = 0;
 
-  return {
-    increment,
-  };
-};
+//   const increment = function() {
+//     privateValue += 1;
+//     console.log(privateValue);
+//   };
 
-const counterA = createCounter();
-console.log(counterA)
-counterA.increment(); // 1
+//   return {
+//     increment,
+//   };
+// };
 
-counterA.increment(); // 2
+// const counterA = createCounter();
+// console.log(counterA)
+// counterA.increment; // 1
+// console.log(counterA.increment)
+// counterA.increment; // 2
 
-const counterB = createCounter();
-counterB.increment(); // 1
-counterB.increment(); // 2
-counterB.increment(); // 3
+// const counterB = createCounter();
+// counterB.increment(); // 1
+// counterB.increment(); // 2
+// counterB.increment(); // 3
+
+// CALLBACK
+
+// function first (y){
+//   y()
+// }
+
+// function second(a, b) {
+//   console.log(a*b)
+// }
+// first(() => second(5,5))
+
+// Нам необходимо вывести результат 
+
