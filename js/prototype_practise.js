@@ -78,28 +78,153 @@
 
 // PRACTICE
 
-class Hero {
+// class Hero {
 
-  static description = `This is basic hero!`;
+//   static description = `This is basic hero!`;
 
-  constructor(name, xp) {
-    this.name = name;
-    this.xp = xp;
-  }
+//   constructor(name, xp) {
+//     this.name = name;
+//     this.xp = xp;
+//   }
 
-    changeName(name) {
-      this.name = name;
-  }
+//     changeName(name) {
+//       this.name = name;
+//   }
   
-  gainXp(quantity) {
-    console.log(`${this.name} earned ${quantity} experience!`)
-    this.xp += quantity;
-  }
+//   gainXp(quantity) {
+//     console.log(`${this.name} earned ${quantity} experience!`)
+//     this.xp += quantity;
+//   }
   
-};
+// };
 
-const human = new Hero('Jim', 1000);
-human.gainXp(500);
-console.log(human);
+// const human = new Hero('Jim', 1000);
+// human.gainXp(500);
+// console.log(human);
 
- 
+
+// const Hero = function (name, xp) {
+//   this.name = name;
+//   this.xp = xp;
+// };
+
+// Hero.description = 'I am HERO!';
+// Hero.showStsts = function (hero) {
+//   console.log(hero);
+// };
+
+// Hero.prototype.changeName = function (name) {
+//   this.name = name;
+// };
+
+
+// const jimi = new Hero('Jimi', 75);
+// console.log(jimi)
+// jimi.changeName('Bro')
+// console.log(jimi)
+// console.dir(Hero)
+
+// class Hero {
+//   constructor(name, xp) {
+//     this._name = name;
+//     this._xp = xp;
+//   };
+  
+//   get name() {
+//     console.log(this._name);
+//   }
+
+//   set name(name) {
+//     this._name = name;
+//   }
+//   // changeName(name) {
+//   //   this.name = name;
+//   // };
+//   // getName() {
+//   //   return this.name;
+//   // };
+
+//   gainXp(quantity) {
+//     this._xp += quantity;
+//     console.log(`Recive ${quantity} xp!`)
+//   };
+
+// }
+
+// const hero = new Hero('Bil', 35);
+// console.log(hero);
+// hero.gainXp(50);
+// console.log(hero);
+// hero.name = 'Brendon';
+// hero.name
+
+// INHERITANCE PrACTICE
+
+// class Hero {
+//   constructor(name, xp) {
+//     this._name = name;
+//     this._xp = xp;
+//   }
+
+//   get name() {
+//     return this._name;
+//   }
+
+//   set name(newName) {
+//     this._name = newName;
+//   }
+
+//   gainXp(amount) {
+//     console.log(`${this._name} get ${amount} exp! `)
+//     this._xp += amount;
+//   }
+// }
+// class Warrior extends Hero {
+//   constructor(name, xp, weapon) {
+//     super(name, xp)
+//     this.weapon = weapon;
+//   }
+//   attack() {
+//     console.log(`${this._name} attack with: ${this.weapon}!!!`)
+//   }
+// }
+
+// const human = new  Warrior('Bill', 10, 'Knife');
+// console.log(human);
+// human.attack()
+// human.gainXp(50)
+
+// const bob = {
+//   name: 'Bob',
+//   age: 14,
+//   walk() {
+//     console.log(`${this.name} is walking`)
+//   }
+// }
+
+// const bill = {
+//   name: 'Bill',
+//   age: 33,
+//     walk() {
+//     console.log(`${this.name} is walking`)
+//   }
+// }
+
+// bob.walk()
+
+// const Human = function (name, age) {
+//   this.name = name;
+//   this.age = age;
+
+//    this.walk = function() {
+//     console.log(`${this.name} is walking`)
+//   }
+// } 
+
+// const bob = new Human('Bob', 15);
+// console.log(bob)
+// const bill = new Human('Bill', 77);
+// console.log(bill)
+// bob.walk()
+
+const 
