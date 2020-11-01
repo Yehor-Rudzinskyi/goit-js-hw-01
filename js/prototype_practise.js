@@ -227,4 +227,45 @@
 // console.log(bill)
 // bob.walk()
 
-const 
+class Hero {
+    static description = 'Make your choice!'
+    static showStats = function () {
+        console.log(Hero)
+    }
+    constructor (name,xp) {
+        this._name = name;
+        this.xp = xp;
+    }
+    get name() {
+        return console.log(this._name);
+    }
+    set name(newName) {
+        this._name = newName;
+    }
+    gainXP(amount) {
+        console.log(`${this._name} get ${amount} experience!`)
+        this.xp += amount;
+    }
+}
+class Warrior extends Hero{
+    constructor(name,xp, weapon) {
+        super(name,xp)
+        this._weapon = weapon;
+    }
+    get weapon() {
+        return console.log(this._weapon)
+    }
+    set weapon(newWeapon) {
+       return this._weapon = newWeapon;
+    }
+    attack() {
+    console.log(`This ${this._name} attack with ${this._weapon}!`)
+}
+}
+const human = new Warrior('Rainor', 25, 'Knife');
+console.log(human);
+human.attack();
+human.gainXP(75);
+console.log(human);
+human.attack();
+human.gainXP(15);
