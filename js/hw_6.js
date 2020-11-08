@@ -117,32 +117,59 @@ const users = [
 // для параметра функции({ name }) без пробелов и переносов на новую строку.
                 
 const getUserNames = array => array.map(({name}) => name);
-console.log(getUserNames(users));
+// console.log(getUserNames(users));
                 
 // HW 6-2
 // Получи массив объектов пользователей, отобранный по цвету глаз(свойство eyeColor),
 // используя деструктурирующее присваивание для параметра функции({ eyeColor }) без пробелов и переносов на новую строку.
                 
 const getUsersWithEyeColor = (array, color) => array.filter(({eyeColor}) => eyeColor === color);
-console.log(getUsersWithEyeColor(users, 'blue'));
+// console.log(getUsersWithEyeColor(users, 'blue'));
                 
 // HW 6-3
 // Получи массив имен пользователей (значение свойства name) по полу (значение свойства gender).
                 
 const getUsersWithGender = (array, genderLookingFor) => array.filter(({gender}) => gender === genderLookingFor).map(({name}) => name);
-console.log(getUsersWithGender(users, 'male'));
+// console.log(getUsersWithGender(users, 'male'));
                 
 // HW 6-4
 // Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive) юзая оператор *!*
                 
 const getInactiveUsers = array  => array.filter(({isActive}) => !isActive);
-console.log(getInactiveUsers(users));
+// console.log(getInactiveUsers(users));
                 
 // HW 6-5
 // Получи объект пользователя (не массив) по уникальному значению свойства email.
 
 const getUserWithEmail = (array, mail) => array.find(({email}) => email === mail);
-console.log(getUserWithEmail(users, 'rossvazquez@xinware.com'));
-                
+// console.log(getUserWithEmail(users, 'rossvazquez@xinware.com'));
+
+// HW 6-6
+// Получи массив из объектов, которые состоят только из свойств name и email тех пользователей,
+// которые попадают в возрастную категорию от min до max лет(значение свойства age).
+const getUsersWithAge = (array, min, max) => array.filter(({ age }) => age > min && age < max).map(({ name, email }) => ({name,email}));  
+
+console.log(getUsersWithAge(users, 20, 30));
+console.log(getUsersWithAge(users, 30, 40));
+
+
+ Сравнение, пример
+
+const x = 13;
+
+// num больше 10 ?
+const larger = num > 10; // true
+
+// num меньше 100 ?
+const smaller = 100 > num; // true
+
+// num находитя между 10 и 100 ?
+const between = smaller && larger; // true
+Создание анонимных объектов:
+
+const arr = Array(3)
+  .fill('')
+  .map((e,i) => ({['index']: i }));
+/* [ { index: 0 }, { index: 1 }, { index: 2 } ] */
                  
 
