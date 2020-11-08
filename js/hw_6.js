@@ -153,23 +153,28 @@ console.log(getUsersWithAge(users, 20, 30));
 console.log(getUsersWithAge(users, 30, 40));
 
 
- Сравнение, пример
+//  Сравнение, пример
 
-const x = 13;
+// const x = 13;
 
-// num больше 10 ?
-const larger = num > 10; // true
+// // num больше 10 ?
+// const larger = num > 10; // true
 
-// num меньше 100 ?
-const smaller = 100 > num; // true
+// // num меньше 100 ?
+// const smaller = 100 > num; // true
 
-// num находитя между 10 и 100 ?
-const between = smaller && larger; // true
-Создание анонимных объектов:
+// // num находитя между 10 и 100 ?
+// const between = smaller && larger; // true
 
-const arr = Array(3)
-  .fill('')
-  .map((e,i) => ({['index']: i }));
+// Создание анонимных объектов:
+
+// const arr = Array(3)
+//   .fill('')
+//   .map((e,i) => ({['index']: i }));
 /* [ { index: 0 }, { index: 1 }, { index: 2 } ] */
                  
+// HW 6-7
+// Получи общую сумму баланса (сумму значений свойства balance) всех пользователей.
 
+const calculateTotalBalance = array => array.reduce((total, {balance}) => total + balance,0);
+ console.log(calculateTotalBalance(users)); 
