@@ -208,6 +208,11 @@ const getNamesSortedByFriendsCount = (array) => array.slice().sort((a,b)  => a.f
 // odd.concat(even)
 // //  [1, 3, 5, 2, 4, 6]
 
-const getSortedUniqueSkills = (array) => array;
-
- console.log(getSortedUniqueSkills(users));
+// reduce, filter, sort
+// В функции редюс, мы конкатенируем отфильтрованный массив
+// (в который при каждой итерации попадает уникальный элемент не содержащийся в аккумуляторе)
+// с аккумулятором. После чего сортируем массив с уникальными элементами по алфавиту.
+// const getSortedUniqueSkills = (array) => array.reduce((acc, { skills }) => skills.filter((element) => !acc.includes(element) ).concat(acc), []).sort();
+const getSortedUniqueSkills = (array) => array.reduce((acc, element) => [...acc, ...element.skills], []).sort().filter((skill, index, array) => array.indexOf(skill) === index);
+console.log(getSortedUniqueSkills(users));
+ 
