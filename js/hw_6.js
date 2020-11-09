@@ -149,8 +149,8 @@ const getUserWithEmail = (array, mail) => array.find(({email}) => email === mail
 // которые попадают в возрастную категорию от min до max лет(значение свойства age).
 const getUsersWithAge = (array, min, max) => array.filter(({ age }) => age > min && age < max).map(({ name, email }) => ({name,email}));  
 
-console.log(getUsersWithAge(users, 20, 30));
-console.log(getUsersWithAge(users, 30, 40));
+// console.log(getUsersWithAge(users, 20, 30));
+// console.log(getUsersWithAge(users, 30, 40));
 
 
 //  Сравнение, пример
@@ -177,4 +177,37 @@ console.log(getUsersWithAge(users, 30, 40));
 // Получи общую сумму баланса (сумму значений свойства balance) всех пользователей.
 
 const calculateTotalBalance = array => array.reduce((total, {balance}) => total + balance,0);
- console.log(calculateTotalBalance(users)); 
+//  console.log(calculateTotalBalance(users)); 
+
+//  HW 6-8
+// filter, includes и map
+// Получи массив имен всех пользователей у которых есть друг с заданным именем.
+
+const getUsersWithFriend = (array, friendName) => array.filter(({ friends }) => friends.includes(friendName)).map(({name}) => name);
+// console.log(getUsersWithFriend(users, 'Briana Decker'));
+
+// HW 6 - 9
+// sort и map
+// Получи массив имен(поле name) людей,
+// отсортированных в зависимости от количества их друзей(поле friends)
+// Тк sort() по умолчанию сортирует, преобразуя к строке - мы тут будем использовать свойство длинны .length 
+
+const getNamesSortedByFriendsCount = (array) => array.slice().sort((a,b)  => a.friends.length - b.friends.length).map(({name}) => name);
+// console.log(getNamesSortedByFriendsCount(users));
+ 
+// HW 6 - 10
+// Получи массив всех умений всех пользователей(поле skills),
+// при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+// Слияние массивов:
+// const odd = [1, 3, 5];
+// const even = [2, 4, 6];
+// // 1
+// [...odd, ...even];
+// //  [1, 3, 5, 2, 4, 6]
+// // 2
+// odd.concat(even)
+// //  [1, 3, 5, 2, 4, 6]
+
+const getSortedUniqueSkills = (array) => array;
+
+ console.log(getSortedUniqueSkills(users));
