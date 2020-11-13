@@ -123,13 +123,18 @@ const products = [
     },
 ];
 
+// Функция принимает массив с объектами(данные) и возвращает уже готовую "гроздь" разметку, НЕ вставляя в DOM
+
 const createProductCard = product => {
     const containerRef = document.createElement('div');
     containerRef.classList.add('container-card');
 
     const tittleRef = document.createElement('h2');
     tittleRef.textContent = product.name;
-    tittleRef.classList.add('product-tittle');
+    // Добавляем на before заголовка товара класс ро условию = есть ли товар в наличии
+    // А если иконка, тогда прийдётся span делать и разметку для svg делать
+    const inStockClass = product.available ? 'product-tittle-avaliable' : 'product-tittle-not-avaliable';
+    tittleRef.classList.add('product-tittle', inStockClass);
 
     const descrRef = document.createElement('p');
     descrRef.textContent = product.description;
@@ -150,4 +155,13 @@ products.forEach(product => {
     console.log(createProductCard(product));
 });
 
- 
+// Проходимся по массиву продуктов, и для каждого продукта возвращаем массив элементов(продуктовых карточек) с помощью Map;
+
+const productCards = products.map((product) => createProductCard(product));
+console.log(productCards);
+
+// Получаем ссылочку на готовый нас принять ДИВ в ШТМЛ
+const productListRef = document.querySelector('.js-products');
+// Теперь чтобы добавить наши карточки имеющие вид массива, после метода map, мы делаем распыление(spred),
+// чтобы в параметры append() пришли обычные элементы
+productListRef.append(...productCards);

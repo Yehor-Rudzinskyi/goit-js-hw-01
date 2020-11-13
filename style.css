@@ -1,0 +1,26 @@
+/* body {
+  background-color: #009999;
+} */
+
+.product-tittle {
+  display: flex;
+  align-items: center;
+}
+
+.product-tittle::before {
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+  margin-right: 8px;
+}
+
+.product-tittle-avaliable::before {
+  background-color: green;
+}
+
+.product-tittle-not-avaliable::before {
+  background-color: red;
+}
