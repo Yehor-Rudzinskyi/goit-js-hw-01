@@ -123,7 +123,7 @@ const products = [
     },
 ];
 
-// Функция принимает массив с объектами(данные) и возвращает уже готовую "гроздь" разметку, НЕ вставляя в DOM
+// Функция принимает массив с объектами(данные/продукт с объектами) и возвращает уже готовую "гроздь" разметку, НЕ вставляя в DOM
 
 const createProductCard = product => {
     const containerRef = document.createElement('div');
@@ -131,18 +131,18 @@ const createProductCard = product => {
 
     const tittleRef = document.createElement('h2');
     tittleRef.textContent = product.name;
-    // Добавляем на before заголовка товара класс ро условию = есть ли товар в наличии
+    // Добавляем на before заголовка товара класс по условию = есть ли товар в наличии
     // А если иконка, тогда прийдётся span делать и разметку для svg делать
     const inStockClass = product.available ? 'product-tittle-avaliable' : 'product-tittle-not-avaliable';
     tittleRef.classList.add('product-tittle', inStockClass);
-
+// На classList.add можно сразу заюзать кучу классов, если задавать через запятую.
     const descrRef = document.createElement('p');
     descrRef.textContent = product.description;
 
     const priceRef = document.createElement('p');
     priceRef.textContent = `Value: ${product.price}$`;
     
-
+// В каком порядке передаём - так и вставится
     containerRef.append(tittleRef, descrRef, priceRef);
     return containerRef;
 };

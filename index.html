@@ -28,12 +28,12 @@
     <button type="button" class="js-target-btn">Целевая кнопка</button>
     <button type="button" class="js-add-listener">Добавить слушатель</button>
     <button type="button" class="js-remove-listener">Снять слушатель</button>
-    <!-- <label>
+    <label>
       Number
       <input type="number" data-value />
       <button type="button" data-add>Plus</button>
     </label>
-    <p class="js-outPut">Total: <span>0</span></p> -->
+    <p class="js-outPut">Total: <span>0</span></p>
 
     <h3>События импутов</h3>
         <p>
@@ -49,7 +49,49 @@
                 </label> 
                 </p>
                 <button type="button" disabled class="js-button">зарегаться как <span>аноним</span></button>
+            
+                <!-- Keyboard practice -->
 
+<p class="js-output"></p>
+<button class="clear" type="button">Clear</button>
+
+<!-- Submit for form  -->
+
+<form class="js-register-form">
+  <div role="group">
+    <label >name<input name="name" type="text" autocomplete="off"></label>
+    <label >mail<input name="email" type="mail" autocomplete="off"></label>
+    <label >password<input name="password" type="password" autocomplete="off"></label>
+  </div>
+  <br>
+  <div role="group">
+    <b>Choose your type of subscription</b>
+    <label>Free<input type="radio" name="subscription" value="free"></label>
+    <label>Basic<input type="radio" name="subscription" value="basic"></label>
+    <label>Pro<input type="radio" name="subscription" value="pro"></label>
+  </div>
+  <br>
+  <button type="submit">Send</button>
+</form>
+<br>
+<h2>Events for mouse</h2>
+<div class="box js-box">
+  <div class="inner-box"></div>
+</div>
+<br>
+
+<!-- MODAL WINDOW -->
+
+<button class="button" data-action="open-modal">Open Modal</button>
+<div class="backdrop js-backdrop">
+  <div class="modal">
+    <h2>Modal window</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis enim eaque vitae nemo, praesentium beatae ducimus
+      adipisci eos, veritatis blanditiis quia! Unde architecto debitis ut quidem aliquid accusamus accusantium nihil.</p>
+      <button class="button" type="button" data-action="close-modal">Close</button>
+  </div>
+  
+</div>
 <script type="module" src="./js/practiceDOMpart2.js"></script>
     <!-- <script src="./js/practice.js"></script> -->
     <!-- <script src="./js/function.js"></script> -->
@@ -66,6 +108,7 @@
                 <!-- <script type="module" src="./js/array_method.js"></script> -->
                   <!-- <script type="module" src="./js/hw_6.js"></script> -->
                   <!-- <script type="module" src="./js/practiceWithDOM.js"></script> -->
+                  <!-- <script type="module" src="./js/module_8_practice.js"></script> -->
 
     <!-- <script type="module" src="./js/task1.js"></script> -->
     <!-- <script type="module" src="./js/task2.js"></script> -->
