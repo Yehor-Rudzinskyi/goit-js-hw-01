@@ -9,7 +9,7 @@
 // const allLinks = document.querySelectorAll('.nav-item-link');
 // console.log(allLinks);
 
-// // Свойчтво textContent - задаёт текст
+// // Свойство textContent - задаёт текст
 // tittleRef.textContent = 'JS - easy!';
 
 // // Работа с атрибутами. Атрибуты тегов, как свойства узлов(элементов)
@@ -131,7 +131,8 @@ const createProductCard = product => {
 
     const tittleRef = document.createElement('h2');
     tittleRef.textContent = product.name;
-    // Добавляем на before заголовка товара класс по условию = есть ли товар в наличии
+    // Добавляем на before (заголовка товара) класс общий(с разметкой before), и класс хранящийся
+    //в переменной по условию = есть ли товар в наличии(через CSS свойства)
     // А если иконка, тогда прийдётся span делать и разметку для svg делать
     const inStockClass = product.available ? 'product-tittle-avaliable' : 'product-tittle-not-avaliable';
     tittleRef.classList.add('product-tittle', inStockClass);
@@ -155,7 +156,8 @@ products.forEach(product => {
     console.log(createProductCard(product));
 });
 
-// Проходимся по массиву продуктов, и для каждого продукта возвращаем массив элементов(продуктовых карточек) с помощью Map;
+// Проходимся по массиву продуктов, и для каждого продукта возвращаем массив элементов(продуктовых карточек)
+// с помощью Map;
 
 const productCards = products.map((product) => createProductCard(product));
 console.log(productCards);
