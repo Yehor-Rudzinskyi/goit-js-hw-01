@@ -137,3 +137,27 @@ body.show-modal .modal {
   color: #fff;
   background-color: #3f51b5;
 }
+
+.box-for-observer {
+  display: block;
+  height: 400px;
+  width: 400px;
+  font-size: 128px;
+  text-align: center;
+  line-height: 400px;
+  color: #fff;
+  margin-bottom: 64px;
+}
+
+.box-for-observer:nth-child(1) {
+  background-color: green;
+}
+.box-for-observer:nth-child(2) {
+  background-color: red;
+}
+.box-for-observer:nth-child(3) {
+  background-color: #ffff44;
+}
+.box-for-observer:nth-child(4) {
+  background-color: hsl(319, 32%, 43%);
+}
