@@ -131,7 +131,7 @@ const io = new IntersectionObserver((entries, observer) => {
             image.classList.add('appear');
             // 5. теперь, чтобы IO более не срабатывал на наших элементах мы на самом экземпляре обзёрва вызываем метод unobserve()
             //  и передаём в него image - наш элемент, за которым можно более не наблюдать
-            observer.observe(image);
+            observer.unobserve(image);
         };
     });
 }, options);
